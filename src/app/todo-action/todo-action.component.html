@@ -1,0 +1,21 @@
+<div>
+  <h2 style="display: inline">Task Lists</h2>
+  <a class="btn btn-primary" (click)="clearList()">Clear List</a>
+  <a class="btn btn-primary" (click)="updateList()">Update List</a>
+  <ul class="list-group ">
+
+    <li class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let x of todo; let y=index">
+      <input type="text" value="{{x.task}}" [(ngModel)]="x.task"/>
+      <input [id]="y" [checked]="x.done" #taskdone (change)="checkTask(taskdone)"
+             type="checkbox" class="form-check-input" >
+      <!--<span *ngIf="x.done;">
+
+      </span>
+      <span *ngIf="!x.done;">
+         <input type="checkbox" class="form-check-input">
+      </span>-->
+
+    </li>
+  </ul>
+</div>

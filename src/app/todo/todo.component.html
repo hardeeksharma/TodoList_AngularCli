@@ -1,0 +1,22 @@
+<!--<div>
+
+  <div class="head-section">
+    <input type="text" placeholder="Add Item" [(ngModel)]="val">
+    <button (click)="add(val)">Add</button>
+  </div>
+
+</div>-->
+
+
+<div class="card">
+  <h3 class="card-header primary-color white-text">ToDo List New Task</h3>
+  <div class="card-body">
+    <p class="card-text">Enter your new task below</p>
+    <div class="md-form form-lg">
+      <input type="text" placeholder="New Task" id="inputLGEx"
+             class="form-control form-control-lg" #task
+             (keyup.enter)="add(task.value); task.value='' ">
+    </div>
+    <a class="btn btn-primary" (click)="add(task.value)" >Add To List</a>
+  </div>
+</div>

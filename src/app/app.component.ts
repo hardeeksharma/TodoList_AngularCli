@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ITodo} from "./interface/interfaces";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  todoList: ITodo[];
+
+  constructor() {
+    this.todoList = [];
+  }
+
+  update(arr) {
+    this.todoList = arr;
+    console.log(this.todoList);
+  }
+
 }
